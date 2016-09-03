@@ -1,2 +1,2 @@
-ARRAY_NAME="<array-name>"
-API_TOKEN="<api-token>"
+ARRAY_NAME="vm-samridh"
+API_TOKEN="859a715f-fcc0-6235-5581-7cd80bb89aaa"
