@@ -16,18 +16,35 @@ var AppComponent = (function () {
             name: 'vol1',
             size: '100G'
         };
+        this.volumes = VOLUMES;
     }
+    AppComponent.prototype.onSelect = function (volume) {
+        this.selectedVolume = volume;
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'volume-manager',
-            template: "\n    <h1>{{ title }}</h1>\n    <h2>{{ volume.name }} details:</h2>\n    <div>\n        <label>Name: </label>\n        <input [(ngModel)]=\"volume.name\" placeholder=\"name\">\n    </div>\n    <div><label>Size: </label>{{ volume.size }}</div>\n    "
+            styles: ["\n        .selected {\n            background-color: #e34800;\n            color: #fff;\n        }\n        .volumes li {\n            border-left: 2px solid #777;\n        }\n        .volumes li:hover {\n            cursor: pointer;\n            border-left-color: #fb5000;\n        }\n    "],
+            template: "\n    <h1>{{ title }}</h1>\n    <h2>All Volumes</h2>\n    <ul class=\"list-group volumes\">\n        <li class=\"list-group-item\"\n            *ngFor=\"let volume of volumes\"\n            [class.selected]=\"volume === selectedVolume\"\n            (click)=\"onSelect(volume)\">\n            <span class=\"badge\">{{ volume.size }}</span>\n            {{ volume.name }}\n        </li>\n    </ul>\n    <div *ngIf=\"selectedVolume\">\n        <h2>{{ selectedVolume.name }} details:</h2>\n        <div>\n            <label>Name: </label>\n            <input [(ngModel)]=\"selectedVolume.name\" placeholder=\"name\">\n        </div>\n        <div><label>Size: </label>{{ selectedVolume.size }}</div>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+var VOLUMES = [
+    { name: 'vol1', size: '100G' },
+    { name: 'vol2', size: '101G' },
+    { name: 'vol3', size: '102G' },
+    { name: 'vol4', size: '103G' },
+    { name: 'vol5', size: '104G' },
+    { name: 'vol6', size: '105G' },
+    { name: 'vol7', size: '106G' },
+    { name: 'vol8', size: '107G' },
+    { name: 'vol9', size: '108G' },
+    { name: 'vol10', size: '109G' },
+];
 var Volume = (function () {
     function Volume() {
     }
