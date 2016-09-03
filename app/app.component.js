@@ -11,16 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Pure Volume Manager';
+        this.volume = {
+            name: 'vol1',
+            size: '100G'
+        };
     }
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'volume-manager',
-            template: "<h1>Pure Volume Manager</h1>"
+            template: "\n    <h1>{{ title }}</h1>\n    <h2>{{ volume.name }} details:</h2>\n    <div>\n        <label>Name: </label>\n        <input [(ngModel)]=\"volume.name\" placeholder=\"name\">\n    </div>\n    <div><label>Size: </label>{{ volume.size }}</div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+var Volume = (function () {
+    function Volume() {
+    }
+    return Volume;
+}());
+exports.Volume = Volume;
 //# sourceMappingURL=app.component.js.map
