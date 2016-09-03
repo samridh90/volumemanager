@@ -10,3 +10,8 @@
 - Display Volume data using string interpolation
 - Inline templating
 - Two way data binding using ngModel from FormsModule on input tag
+
+## Part 2
+- Display list of selectable volumes
+- Select a volume and show it's details
+- Structural directives (ngFor, ngIf), event bindings (click), and property bindings (class.<name>)
