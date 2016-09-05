@@ -1,3 +1,4 @@
 node_modules/*
 *.pyc
+./app/**/*.js
 *.js.map
