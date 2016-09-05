@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
 import { Volume } from './volume';
+import { VolumeService } from './volume.service';
 
 @Component({
     selector: 'volume-detail',
@@ -14,6 +17,16 @@ import { Volume } from './volume';
     </div>
     `
 })
-export class VolumeDetailComponent {
+export class VolumeDetailComponent implements OnInit {
     @Input() volume: Volume;
+
+    constructor(private volumeService: VolumeService, private route: ActivatedRoute) {}
+
+    ngOnInit(): void {
+        this.route.params.forEach((params: Params) => {
+            let name = params['name'];
+            this.volumeService.getVolume(name)
+                .subscribe(volume => this.volume = volume);
+        });
+    }
 }

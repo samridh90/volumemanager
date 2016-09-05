@@ -7,12 +7,18 @@ from flasharray import FlashArray
 fa = FlashArray()
 app = Flask(__name__, template_folder='./')
 
-@app.route("/volumes")
+@app.route("/api/v1/volumes")
 def list_volumes():
     return jsonify(fa.list_volumes())
 
 @app.route("/")
+@app.route("/dashboard")
+@app.route("/volumes")
 def index():
+    return flask.render_template("index.html")
+
+@app.route("/detail/<path:path>")
+def also_index(path):
     return flask.render_template("index.html")
 
 @app.route("/<path:path>")

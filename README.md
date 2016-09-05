@@ -27,3 +27,10 @@
 - Use `ngOnInit` lifecycle hook to get data on component init
 - Use `providers` array to specify service as a provider for component
 - Mock out volumes data and expose to component as an `Observable`
+
+## Part 5
+- Add _Component Router_ for navigation
+- `routerLink`s and `routerOutlet`s
+- Shared services
+- `templateUrl` and `styleUrls` properties of components
+- `uppercase` pipe

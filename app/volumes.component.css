@@ -1,0 +1,11 @@
+.selected {
+    background-color: #e34800;
+    color: #fff;
+}
+.volumes li {
+    border-left: 2px solid #777;
+}
+.volumes li:hover {
+    cursor: pointer;
+    border-left-color: #fb5000;
+}
