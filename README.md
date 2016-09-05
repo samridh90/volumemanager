@@ -15,3 +15,9 @@
 - Display list of selectable volumes
 - Select a volume and show it's details
 - Structural directives (ngFor, ngIf), event bindings (click), and property bindings (class.<name>)
+
+## Part 3
+- Create a reusable component
+- Pass inputs to component
+- Declare dependencies in NgModule
+- Bind data from parent component to child component
