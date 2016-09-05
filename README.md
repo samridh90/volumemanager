@@ -21,3 +21,9 @@
 - Pass inputs to component
 - Declare dependencies in NgModule
 - Bind data from parent component to child component
+
+## Part 4
+- Create a reusable service to fetch data
+- Use `ngOnInit` lifecycle hook to get data on component init
+- Use `providers` array to specify service as a provider for component
+- Mock out volumes data and expose to component as an `Observable`
