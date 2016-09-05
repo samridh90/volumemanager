@@ -9,4 +9,8 @@ export class VolumeService {
     getVolumes(): Observable<Volume[]> {
         return Observable.of(VOLUMES);
     }
+
+    getVolume(name: string): Observable<Volume> {
+        return this.getVolumes().map(volumes => volumes.find(volume => volume.name === name));
+    }
 }

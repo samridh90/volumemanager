@@ -10,3 +10,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 2em;
 }
+
+.card {
+  display: inline-block;
+  margin: 15px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  background-color: #e34800;
+  cursor: pointer;
+}
+
+a.active,
+a:link.active,
+a:visited.active
+a:focus.active {
+  background-color: #e34800 !important;
+  color: #fff;
+}

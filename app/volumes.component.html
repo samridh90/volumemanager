@@ -1,0 +1,16 @@
+<h2>All Volumes</h2>
+<ul class="list-group volumes">
+    <li class="list-group-item"
+        *ngFor="let volume of volumes"
+        [class.selected]="volume === selectedVolume"
+        (click)="onSelect(volume)">
+        <span class="badge">{{ volume.size }}</span>
+        {{ volume.name }}
+    </li>
+</ul>
+<div *ngIf="selectedVolume">
+    <h2>
+        {{selectedVolume.name | uppercase}} selected
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
