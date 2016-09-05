@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Volume } from './volume';
 
 @Component({
     moduleId: module.id,
@@ -28,14 +29,7 @@ import { Component } from '@angular/core';
             {{ volume.name }}
         </li>
     </ul>
-    <div *ngIf="selectedVolume">
-        <h2>{{ selectedVolume.name }} details:</h2>
-        <div>
-            <label>Name: </label>
-            <input [(ngModel)]="selectedVolume.name" placeholder="name">
-        </div>
-        <div><label>Size: </label>{{ selectedVolume.size }}</div>
-    </div>
+    <volume-detail [volume]="selectedVolume"></volume-detail>
     `
 })
 export class AppComponent {
@@ -64,8 +58,3 @@ const VOLUMES: Volume[] = [
     { name: 'vol9', size: '108G' },
     { name: 'vol10', size: '109G' },
 ];
-
-export class Volume {
-    name: string;
-    size: string;
-}
