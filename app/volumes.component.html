@@ -1,9 +1,16 @@
+<div>
+    <br/><br/>
+    <label>Volume name: </label><input #volumeName><br/>
+    <label>Volume size: </label><input #volumeSize><br/>
+    <button (click)="add(volumeName.value, volumeSize.value)">Add</button>
+</div>
 <h2>All Volumes</h2>
 <ul class="list-group volumes">
     <li class="list-group-item"
         *ngFor="let volume of volumes"
         [class.selected]="volume === selectedVolume"
         (click)="onSelect(volume)">
+        <button class="badge" (click)="delete(volume); $event.stopPropagation()">x</button>
         <span class="badge">{{ volume.size }}</span>
         {{ volume.name }}
     </li>

@@ -34,3 +34,9 @@
 - Shared services
 - `templateUrl` and `styleUrls` properties of components
 - `uppercase` pipe
+
+## Part 6
+- Add `HttpModule` as dependency
+- Refactor `VolumeService` to load data from web server
+- Add support for POST, PUT, and DELETE to `VolumeService`
+- Update components to allow CRUD operations

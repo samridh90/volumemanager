@@ -31,4 +31,24 @@ export class VolumesComponent implements OnInit {
     gotoDetail(): void {
         this.router.navigate(['/detail', this.selectedVolume.name]);
     }
+
+    add(name: string, size: string): void {
+        name = name.trim();
+        size = size.trim();
+        if (!name || !size) {
+            return;
+        }
+        this.volumeService.create({name, size}).subscribe(volume => {
+            this.volumes.push(volume);
+            this.selectedVolume = null;
+        });
+    }
+
+    delete(volume: Volume): boolean {
+        this.volumeService.delete(volume.name).subscribe(volume => {
+            this.getVolumes();
+            this.selectedVolume = null;
+        });
+        return false;
+    }
 }
